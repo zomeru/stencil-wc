@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ApolloButton {
+        "appearance": string;
+        "text": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +26,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLApolloButtonElement extends Components.ApolloButton, HTMLStencilElement {
+    }
+    var HTMLApolloButtonElement: {
+        prototype: HTMLApolloButtonElement;
+        new (): HTMLApolloButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +39,15 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "apollo-button": HTMLApolloButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface ApolloButton {
+        "appearance"?: string;
+        "text"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +63,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "apollo-button": ApolloButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +71,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "apollo-button": LocalJSX.ApolloButton & JSXBase.HTMLAttributes<HTMLApolloButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -3,12 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <link rel="stylesheet" href="/build/stencil-wc.css" />
     <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/stencil-wc.esm.js"></script>
     <script nomodule src="/build/stencil-wc.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <div class="container">
+      <div class="row"><h3>Buttons</h3></div>
+      <div class="row space-between">
+        <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+        <apollo-button text="Primary" appearance="primary"></apollo-button>
+
+        <apollo-button text="Secondary" appearance="secondary"></apollo-button>
+
+        <apollo-button text="Tertiary" appearance="tertiary"></apollo-button>
+
+        <apollo-button text="Warning" appearance="warning"></apollo-button>
+
+        <apollo-button text="Danger" appearance="danger"></apollo-button>
+      </div>
+    </div>
   </body>
 </html>
