@@ -2,7 +2,10 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <link rel="stylesheet" href="/build/stencil-wc.css" />
     <title>Stencil Component Starter</title>
 
@@ -13,7 +16,6 @@
     <div class="container">
       <div class="row"><h3>Buttons</h3></div>
       <div class="row space-between">
-        <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
         <apollo-button text="Primary" appearance="primary"></apollo-button>
 
         <apollo-button text="Secondary" appearance="secondary"></apollo-button>
@@ -25,5 +27,54 @@
         <apollo-button text="Danger" appearance="danger"></apollo-button>
       </div>
     </div>
+    <div class="container">
+      <div class="row"><h3>Modal</h3></div>
+      <div class="row space-between">
+        <apollo-button
+          class="modal-button"
+          text="Open Modal"
+          appearance="primary"
+        ></apollo-button>
+        <apollo-modal
+          buttons='[{"text": "Confirm"}, {"text": "Cancel"}]'
+          header="Modal Header"
+          appearance="primary"
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam qui
+          nobis corrupti dolore voluptate, sunt quod, amet illum ex illo dolorem
+          eaque voluptatum debitis cum ratione quae voluptas, accusantium
+          cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+          qui nobis corrupti dolore voluptate, sunt quod, amet illum ex illo
+          dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Totam qui nobis corrupti dolore voluptate, sunt quod, amet illum
+          ex illo dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Totam qui nobis corrupti dolore voluptate, sunt quod, amet illum
+          ex illo dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Totam qui nobis corrupti dolore voluptate, sunt quod, amet illum
+          ex illo dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Totam qui nobis corrupti dolore voluptate, sunt quod, amet illum
+          ex illo dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Totam qui nobis corrupti dolore voluptate, sunt quod, amet illum
+          ex illo dolorem eaque voluptatum debitis cum ratione quae voluptas,
+          accusantium cumque.</apollo-modal
+        >
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector(".modal-button");
+      const modal = document.querySelector("apollo-modal");
+
+      btn.addEventListener("click", () => {
+        modal.isOpen = true;
+      });
+
+      modal.addEventListener("action", () => {
+        console.log("Confirm clicked");
+      });
+    </script>
   </body>
 </html>
